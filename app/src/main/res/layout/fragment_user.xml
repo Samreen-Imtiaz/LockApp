@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="test.screenlocker.com.myapplication.SecurityFragment">
+
+    <TextView
+        android:text="User Profile:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:text="Add Picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="90dp"
+        android:id="@+id/textView1" />
+
+    <TextView
+        android:text="Number:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/textView2" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/editText4" />
+
+    <TextView
+        android:text="Email:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_below="@+id/editText4"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/textView3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignStart="@+id/editText4" />
+
+    <Button
+        android:text="Clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignStart="@+id/editText5" />
+
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/button2"
+        android:layout_below="@+id/editText5"
+        android:layout_alignEnd="@+id/textView3" />
+</RelativeLayout>
