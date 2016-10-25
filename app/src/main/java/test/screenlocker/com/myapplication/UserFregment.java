@@ -2,7 +2,6 @@ package test.screenlocker.com.myapplication;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -34,15 +33,15 @@ public class UserFregment extends Fragment {
         return sampleFragment;
     }
 
-    @Nullable
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user, container, false);
 
 
         ////////////////////////////////////////////////////////////
-    /*    pref = getSharedPreferences(mypreference,
-                Context.MODE_PRIVATE);
+       /* Context context = getActivity();
+        pref = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
         if (pref.contains(Number)) {
             etPhoneNumber.setText(pref.getString(Number, ""));
         }
@@ -93,12 +92,12 @@ public class UserFregment extends Fragment {
                 if ( checkValidation () )
                 {
                     ////////////////////////////////////////////////////////
-                 /*  String n = etPhoneNumber.getText().toString();
+               /*   String n = etPhoneNumber.getText().toString();
                     String e = etEmailAddrss.getText().toString();
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putString(Number, n);
                     editor.putString(Email, e);
-                    editor.commit();*/
+                    editor.commit(); */
                     //////////////////////////////////////
                     submitForm();
                 }
@@ -108,6 +107,8 @@ public class UserFregment extends Fragment {
         });
         return view;
     }
+
+
 
     private void submitForm() {
         // Submit your form here. your form is valid

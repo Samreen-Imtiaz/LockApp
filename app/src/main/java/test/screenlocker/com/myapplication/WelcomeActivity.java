@@ -1,10 +1,5 @@
 package test.screenlocker.com.myapplication;
 
-/**
- * Created by samreen on 9/27/2016.
- */
-
-
         import android.content.Context;
         import android.content.Intent;
         import android.graphics.Color;
@@ -63,8 +58,8 @@ public class WelcomeActivity extends AppCompatActivity {
                 R.layout.welcome_slide1,
                 R.layout.welcome_slide2,
                 R.layout.welcome_slide3,
-                R.layout.welcome_slide4,
-                R.layout.fragment_user};
+               R.layout.welcome_slide4
+                };
 
         // adding bottom dots
         addBottomDots(0);
