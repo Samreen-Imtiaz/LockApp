@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".User_slide"></activity>
+        <activity android:name=".UserManual"></activity>
     </application>
 
 </manifest>

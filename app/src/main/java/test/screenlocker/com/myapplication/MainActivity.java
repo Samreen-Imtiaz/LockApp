@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         return super.onOptionsItemSelected(item);
     }*/
-
+/////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void onDrawerItemSelected(View view, int position) {
         displayView(position);
@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     private void displayView(int position) {
         Fragment fragment = null;
+        UserManual activity= null;
         String title = getString(R.string.app_name);
         switch (position) {
             case 0:
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 title = getString(R.string.settings);
                 break;
             case 1:
-                fragment = new UserManual();
+                activity = new UserManual();
                 title = getString(R.string.slides);
                 break;
             case 2:
