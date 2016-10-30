@@ -40,7 +40,7 @@ public class UserFregment extends Fragment {
 
 
         ////////////////////////////////////////////////////////////
-       /* Context context = getActivity();
+      /*  Context context = getActivity();
         pref = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
         if (pref.contains(Number)) {
             etPhoneNumber.setText(pref.getString(Number, ""));
@@ -48,7 +48,7 @@ public class UserFregment extends Fragment {
         if (pref.contains(Email)) {
             etEmailAddrss.setText(pref.getString(Email, ""));
 
-        }*/
+        } */
         ////////////////////////////////////////////////////////////
 
 
@@ -92,12 +92,12 @@ public class UserFregment extends Fragment {
                 if ( checkValidation () )
                 {
                     ////////////////////////////////////////////////////////
-               /*   String n = etPhoneNumber.getText().toString();
+               /*String n = etPhoneNumber.getText().toString();
                     String e = etEmailAddrss.getText().toString();
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putString(Number, n);
                     editor.putString(Email, e);
-                    editor.commit(); */
+                    editor.commit();*/
                     //////////////////////////////////////
                     submitForm();
                 }
