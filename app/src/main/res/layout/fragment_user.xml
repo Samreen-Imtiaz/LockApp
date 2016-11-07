@@ -5,114 +5,86 @@
     android:layout_height="match_parent"
     tools:context="test.screenlocker.com.myapplication.SecurityFragment">
 
-   <!-- <LinearLayout
-        android:layout_width="1000dp"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary">
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/ic_action_user"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="5dp"/>
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="  User Profile"
-            android:textSize="18dp"
-            android:textColor="@color/textColorPrimary"
-            android:layout_marginTop="12dp"/>
-    </LinearLayout>
--->
-    <TextView
-        android:text="User Profile:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:textColor="@color/colorPrimary"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:id="@+id/textView" />
+    <include
+        android:id="@+id/top" layout="@layout/main_header" />
 
     <TextView
-        android:text="Add Picture"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="90dp"
-        android:id="@+id/textView1" />
+        android:text="Add Picture"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:text="Number:"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="150dp"
-        android:id="@+id/textView2" />
+        android:text="Number:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
     <EditText
+        android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
         android:layout_marginEnd="37dp"
         android:layout_marginTop="150dp"
-        android:id="@+id/editText4" />
+        android:ems="10"
+        android:inputType="phone" />
 
     <TextView
-        android:text="Email:"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_below="@+id/editText4"
         android:layout_alignEnd="@+id/textView2"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/editText4"
         android:layout_marginStart="10dp"
-        android:id="@+id/textView3" />
+        android:layout_marginTop="30dp"
+        android:text="Email:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText5"
+        android:layout_alignStart="@+id/editText4"
         android:layout_alignTop="@+id/textView3"
-        android:layout_alignStart="@+id/editText4" />
+        android:ems="10"
+        android:inputType="textEmailAddress" />
 
     <Button
-        android:text="Clear"
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
         android:layout_alignBaseline="@+id/button2"
         android:layout_alignBottom="@+id/button2"
-        android:layout_alignStart="@+id/editText5" />
+        android:layout_alignStart="@+id/editText5"
+        android:text="Clear" />
 
     <Button
-        android:text="Save"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:id="@+id/button2"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/editText5"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_marginTop="33dp"
+        android:text="Save" />
+
+
 </RelativeLayout>

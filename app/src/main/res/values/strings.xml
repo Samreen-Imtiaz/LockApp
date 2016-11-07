@@ -1,20 +1,20 @@
 <resources>
 
-        <string name="app_name">LockScreen</string>
-        <string name="action_settings">Settings</string>
-        <string name="action_search">Search</string>
+    <string name="app_name">LockApp-demo</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
 
 
-        <string name="nav_item_home">Settings</string>
-        <string name="nav_item_friends">User Manual</string>
-        <string name="nav_item_notifications">Preferences</string>
+    <string name="nav_item_home">Settings</string>
+    <string name="nav_item_friends">User Manual</string>
+    <string name="nav_item_notifications">Preferences</string>
 
-        <!-- navigation drawer item labels  -->
-        <string-array name="nav_drawer_labels">
-            <item>@string/nav_item_home</item>
-            <item>@string/nav_item_friends</item>
-            <item>@string/nav_item_notifications</item>
-        </string-array>
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

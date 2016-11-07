@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     private CoordinatorLayout coordinatorLayout;
     private static String TAG = MainActivity.class.getSimpleName();
 
-    private Toolbar mToolbar;
-    private FragmentDrawer drawerFragment;
     private BottomBar bottomBar;
 
 
@@ -30,15 +28,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        drawerFragment = (FragmentDrawer)
-                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
-        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
-        drawerFragment.setDrawerListener(this);
 
         // display the first navigation drawer view on app launch
         displayView(0);
@@ -138,16 +128,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 break;
         }
 
-        if (fragment != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_body, fragment);
-            fragmentTransaction.commit();
 
-            // set the toolbar title
-            getSupportActionBar().setTitle(title);
-        }
     }
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

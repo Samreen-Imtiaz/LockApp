@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="test.screenlocker.com.myapplication">
 
     <application
+        android:name=".LocKAppApplicaton"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/iconapp"
         android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme"
-        android:supportsRtl="true">
+        tools:replace="allowBackup">
         <activity android:name=".MainActivity"></activity>
 
         <activity android:name=".WelcomeActivity">
@@ -18,7 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".User_slide"></activity>
-        <activity android:name=".UserManual"></activity>
     </application>
 
 </manifest>

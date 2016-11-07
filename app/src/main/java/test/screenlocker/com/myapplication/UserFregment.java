@@ -3,6 +3,8 @@ package test.screenlocker.com.myapplication;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SlidingPaneLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -10,18 +12,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import test.screenlocker.com.myapplication.listener.SliderListener;
+import test.screenlocker.com.myapplication.utils.PreferencesConstants;
+import test.screenlocker.com.myapplication.utils.PreferencesHandler;
+
 public class UserFregment extends Fragment {
-    private static final String STARTING_TEXT = "Four Buttons Bottom Navigation";
     private EditText etEmailAddrss;
     private EditText etPhoneNumber;
     private Button btnSubmit, btnclear;
-    SharedPreferences pref;
-    public static final String mypreference = "mypref";
-   public static final String Number = "numberKey";
-    public static final String Email = "emailKey";
-
+    TextView heading;
+    View view;
+    SlidingPaneLayout mSlidingLayout;
+    ImageButton slidingPaneButton;
 
     public UserFregment() {
     }
@@ -33,44 +39,55 @@ public class UserFregment extends Fragment {
         return sampleFragment;
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_user, container, false);
+        view = inflater.inflate(R.layout.fragment_user, container, false);
+        initView();
+        setListeners();
+        return view;
+    }
 
+    public void initView() {
+        etPhoneNumber = (EditText) view.findViewById(R.id.editText4);
+        etEmailAddrss = (EditText) view.findViewById(R.id.editText5);
+        btnclear = (Button) view.findViewById(R.id.button3);
+        btnSubmit = (Button) view.findViewById(R.id.button2);
+        heading = (TextView) view.findViewById(R.id.textview);
+        etPhoneNumber.setText(PreferencesHandler.getStringPreferences(PreferencesConstants.phone));
+        etEmailAddrss.setText(PreferencesHandler.getStringPreferences(PreferencesConstants.email));
+        heading.setText("User Profile");
+        mSlidingLayout = (SlidingPaneLayout) getActivity().findViewById(R.id.sliding_pane_layout);
+        mSlidingLayout.setPanelSlideListener(SliderListener.getInstance(getActivity()));
+        slidingPaneButton = (ImageButton) view.findViewById(R.id.left_button_header);
+        slidingPaneButton.setVisibility(View.VISIBLE);
+        slidingPaneButton.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.top_left_menu_icon));
+    }
 
-        ////////////////////////////////////////////////////////////
-      /*  Context context = getActivity();
-        pref = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
-        if (pref.contains(Number)) {
-            etPhoneNumber.setText(pref.getString(Number, ""));
-        }
-        if (pref.contains(Email)) {
-            etEmailAddrss.setText(pref.getString(Email, ""));
-
-        } */
-        ////////////////////////////////////////////////////////////
-
-
-        etEmailAddrss= (EditText) view.findViewById(R.id.editText5);
+    public void setListeners() {
         etEmailAddrss.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
                 Validate_profile.isEmailAddress(etEmailAddrss, true);
             }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
-            public void onTextChanged(CharSequence s, int start, int before, int count){}
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
         });
 
-        etPhoneNumber= (EditText) view.findViewById(R.id.editText4);
         etPhoneNumber.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
                 Validate_profile.isPhoneNumber(etPhoneNumber, false);
             }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
-            public void onTextChanged(CharSequence s, int start, int before, int count){}
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
         });
 
-        btnclear = (Button) view.findViewById(R.id.button3);
         btnclear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,40 +97,31 @@ public class UserFregment extends Fragment {
         });
 
 
-        btnSubmit = (Button) view.findViewById(R.id.button2);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
-                Validation class will check the error and display the error on respective fields
-                but it won't resist the form submission, so we need to check again before submit
-                 */
 
-                if ( checkValidation () )
-                {
-                    ////////////////////////////////////////////////////////
-               /*String n = etPhoneNumber.getText().toString();
-                    String e = etEmailAddrss.getText().toString();
-                    SharedPreferences.Editor editor = pref.edit();
-                    editor.putString(Number, n);
-                    editor.putString(Email, e);
-                    editor.commit();*/
-                    //////////////////////////////////////
+                if (checkValidation()) {
                     submitForm();
-                }
-                else
+                } else
                     Toast.makeText(getActivity(), "Please fill the fields properly!", Toast.LENGTH_LONG).show();
             }
         });
-        return view;
+
+        slidingPaneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSlidingLayout.openPane();
+            }
+        });
     }
 
-
-
     private void submitForm() {
-        // Submit your form here. your form is valid
-        //  Toast.makeText(this, "Profile Created!", Toast.LENGTH_LONG).show();
+        PreferencesHandler.updatePreferences(PreferencesConstants.email, etEmailAddrss.getText().toString().trim());
+        PreferencesHandler.updatePreferences(PreferencesConstants.phone, etPhoneNumber.getText().toString().trim());
+
         Toast.makeText(getActivity(), "Profile Created!", Toast.LENGTH_SHORT).show();
+
     }
 
     private boolean checkValidation() {
@@ -123,4 +131,5 @@ public class UserFregment extends Fragment {
         if (!Validate_profile.isPhoneNumber(etPhoneNumber, true)) ret = false;
 
         return ret;
-    }}
+    }
+}
