@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     tools:context="test.screenlocker.com.myapplication.HomeFragment" >
 
+  <include
+      android:id="@+id/top" layout="@layout/main_header" />
+
   <!--  <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp"

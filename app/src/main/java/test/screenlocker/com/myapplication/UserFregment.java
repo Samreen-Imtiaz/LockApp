@@ -1,6 +1,5 @@
 package test.screenlocker.com.myapplication;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -53,6 +52,7 @@ public class UserFregment extends Fragment {
         btnclear = (Button) view.findViewById(R.id.button3);
         btnSubmit = (Button) view.findViewById(R.id.button2);
         heading = (TextView) view.findViewById(R.id.textview);
+
         etPhoneNumber.setText(PreferencesHandler.getStringPreferences(PreferencesConstants.phone));
         etEmailAddrss.setText(PreferencesHandler.getStringPreferences(PreferencesConstants.email));
         heading.setText("User Profile");
