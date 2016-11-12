@@ -19,7 +19,7 @@ import android.widget.Toast;
 import test.screenlocker.com.myapplication.listener.SliderListener;
 import test.screenlocker.com.myapplication.utils.PreferencesConstants;
 import test.screenlocker.com.myapplication.utils.PreferencesHandler;
-//dev same commit
+//dev samreen commit
 public class UserFregment extends Fragment {
     private EditText etEmailAddrss;
     private EditText etPhoneNumber;
